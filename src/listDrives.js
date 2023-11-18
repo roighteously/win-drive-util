@@ -31,7 +31,14 @@ function listDrivesSync() {
     return real;
 }
 
+function ifDriveExistsSync(driveName) {
+    let stdout = require('child_process').execSync('wmic logicaldisk where "VolumeName=\'' + driveName + '\'" get DeviceID').toString();
+    if (encodeURIComponent(stdout) === '%0D%0D%0A%0D%0D%0A') return false;
+    return true;
+}
+
 module.exports = {
     listDrives,
-    listDrivesSync
+    listDrivesSync,
+    ifDriveExistsSync
 }

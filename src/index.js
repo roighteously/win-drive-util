@@ -4,5 +4,6 @@
 module.exports = {
     waitForDrive:  require("./waitForDrive").waitForDrive,
     listDrives: require("./listDrives").listDrives,
-    listDrivesSync: require("./listDrives").listDrivesSync
+    listDrivesSync: require("./listDrives").listDrivesSync,
+    ifDriveExistsSync: require("./listDrives").ifDriveExistsSync
 }
